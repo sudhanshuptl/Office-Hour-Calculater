@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+
+  "name": "Office Work Hour Calculater",
+  "description": "This extention Allow User to calculate his work hours in office.",
+  "version": "1.0",
+
+  "icons": { "16": "hourglass-512.png",
+           "48": "hourglass-512.png",
+          "128": "hourglass-512.png" },
+
+  "browser_action": {
+    "default_icon": "hourglass-512.png",
+    "default_popup": "Timer.html"
+  },
+
+  "chrome_url_overrides" : {
+    "newtab": "Timer.html"
+  },
+
+
+  "content_scripts": [
+    {
+     "matches": ["http://mytime.com/*","http://sid.com/*"],
+      //"css": ["mystyles.css"],
+      "js": ["Timer.js"]
+}
+  ],
+
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}
